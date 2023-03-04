@@ -43,10 +43,28 @@ function searchWeather(city) {
 
 function showTemp(response) {
   let temperature = Math.round(response.data.main.temp);
+  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let description = document.querySelector("#temperature-description");
   temperatureElement.innerHTML = `${temperature}`;
   description.innerHTML = response.data.weather[0].description;
+  document.querySelector("#feelsLike").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
+  document.querySelector("#valueHumidity").innerHTML =
+    response.data.main.humidity;
+  document.querySelector("#valueWind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#valueVisibility").innerHTML =
+    response.data.visibility;
+  document.querySelector("#valueSunrise").innerHTML = response.data.sys.sunrise;
+  document.querySelector("#valuePressure").innerHTML =
+    response.data.main.pressure;
+  document.querySelector("#valueSunset").innerHTML = response.data.sys.sunset;
+  document.querySelector("#valueWindGust").innerHTML = Math.round(
+    response.data.wind.gust
+  );
 }
 
 let form = document.querySelector("#city-search");
@@ -67,9 +85,26 @@ function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let description = document.querySelector("#temperature-description");
-  temperatureElement.innerHTML = `${temperature}°C`;
+  temperatureElement.innerHTML = `${temperature}`;
   cityElement.innerHTML = city;
   description.innerHTML = response.data.weather[0].description;
+  document.querySelector("#feelsLike").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
+  document.querySelector("#valueHumidity").innerHTML =
+    response.data.main.humidity;
+  document.querySelector("#valueWind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#valueVisibility").innerHTML =
+    response.data.visibility;
+  document.querySelector("#valueSunrise").innerHTML = response.data.sys.sunrise;
+  document.querySelector("#valuePressure").innerHTML =
+    response.data.main.pressure;
+  document.querySelector("#valueSunset").innerHTML = response.data.sys.sunset;
+  document.querySelector("#valueWindGust").innerHTML = Math.round(
+    response.data.wind.gust
+  );
 }
 
 function getPosition() {
