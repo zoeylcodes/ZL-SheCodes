@@ -94,9 +94,10 @@ a {
 }
 
 body {
-  background-image: url(Images/wallpaperflare.com_wallpaper.jpg);
+  background-image: url(Images/pexels-iconcom-730425.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  max-width: 100%;
 }
 
 .rowcontainer {
