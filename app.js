@@ -34,6 +34,14 @@ function findCity(event) {
   searchWeather(city);
 }
 
+function getCity(city) {
+  let apiKey = "e22ed9083fe0fa0dbcc4f7e384978903";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemp);
+  searchWeather(city);
+}
+
 function searchWeather(city) {
   let apiKey = "e22ed9083fe0fa0dbcc4f7e384978903";
   let units = "metric";
@@ -48,6 +56,7 @@ function showTemp(response) {
   let description = document.querySelector("#temperature-description");
   temperatureElement.innerHTML = `${temperature}`;
   description.innerHTML = response.data.weather[0].description;
+  document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#feelsLike").innerHTML = Math.round(
     response.data.main.feels_like
   );
@@ -70,6 +79,8 @@ function showTemp(response) {
 let form = document.querySelector("#city-search");
 form.addEventListener("submit", findCity);
 
+getCity("Toronto");
+
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -86,7 +97,7 @@ function showTemperature(response) {
   let cityElement = document.querySelector("#city");
   let description = document.querySelector("#temperature-description");
   temperatureElement.innerHTML = `${temperature}`;
-  cityElement.innerHTML = city;
+  document.querySelector("#city").innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   document.querySelector("#feelsLike").innerHTML = Math.round(
     response.data.main.feels_like
