@@ -201,3 +201,7 @@ body {
 .footer {
   padding: 60px 0px 0px 0px;
 }
+.active {
+  cursor: default;
+  color: black;
+}
