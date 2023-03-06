@@ -1,4 +1,4 @@
-let h2 = document.querySelector("h2");
+let dateTime = document.querySelector("#dateTime");
 
 let now = new Date();
 let hours = now.getHours();
@@ -23,7 +23,7 @@ let days = [
 
 let day = days[now.getDay()];
 
-h2.innerHTML = `${day} ${hours}:${minutes}`;
+dateTime.innerHTML = `${day} ${hours}:${minutes}`;
 
 function findCity(event) {
   event.preventDefault();

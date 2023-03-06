@@ -16,12 +16,17 @@ h2 {
   padding: 0px;
   margin: 0 auto;
   opacity: 5px;
-  font-size: 20px;
+  font-size: 15px;
+  color: white;
 }
 
 .top {
   padding-bottom: 0px;
   margin-bottom: 0px;
+}
+
+#search-text-input {
+  width: 50%;
 }
 #weather {
   position: relative;
@@ -44,6 +49,7 @@ h2 {
   text-align: center;
   padding: 0px;
   margin: 0 auto;
+  text-transform: capitalize;
 }
 
 #icon {
@@ -113,6 +119,7 @@ a {
   font-weight: bold;
   padding: 0px;
   margin: 0px;
+  width: calc(100% / 3 - 10px);
 }
 .card {
   font-weight: 100;
@@ -143,6 +150,15 @@ body {
   position: relative;
   top: -180px;
   bottom: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .topcontainer {
