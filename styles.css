@@ -193,6 +193,11 @@ body {
   top: -20px;
   bottom: 0px;
 }
+
+.days {
+  position: relative;
+  top: -200px;
+}
 .footer {
   padding: 60px 0px 0px 0px;
 }
