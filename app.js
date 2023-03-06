@@ -54,6 +54,7 @@ function showTemp(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let description = document.querySelector("#temperature-description");
+  let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = `${temperature}`;
   description.innerHTML = response.data.weather[0].description;
   document.querySelector("#city").innerHTML = response.data.name;
@@ -74,6 +75,11 @@ function showTemp(response) {
   document.querySelector("#valueWindGust").innerHTML = Math.round(
     response.data.wind.gust
   );
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let form = document.querySelector("#city-search");
@@ -96,6 +102,7 @@ function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let description = document.querySelector("#temperature-description");
+  let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = `${temperature}`;
   document.querySelector("#city").innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
@@ -116,6 +123,11 @@ function showTemperature(response) {
   document.querySelector("#valueWindGust").innerHTML = Math.round(
     response.data.wind.gust
   );
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function getPosition() {

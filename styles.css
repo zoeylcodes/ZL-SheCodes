@@ -2,18 +2,32 @@ h5 {
   text-align: center;
 }
 
-h1,
+h1 {
+  padding-top: 20px;
+  position: relative;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+
 h2 {
   position: relative;
   text-align: center;
   padding: 0px;
   margin: 0 auto;
+  opacity: 5px;
+  font-size: 20px;
+}
+
+.top {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 #weather {
   position: relative;
   text-align: center;
-  padding: 0px;
-  margin: 0 auto;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
   font-size: 25px;
   text-decoration: none;
 }
@@ -22,10 +36,25 @@ h2 {
   text-align: center;
   padding: 0px;
   margin: 0 auto;
-  font-size: 45px;
+  font-size: 50px;
   text-decoration: none;
 }
+#temperature-description {
+  position: relative;
+  text-align: center;
+  padding: 0px;
+  margin: 0 auto;
+}
 
+#icon {
+  position: relative;
+  padding: 0px;
+  margin: 0 auto;
+  font-size: 15px;
+  text-decoration: none;
+  top: -200px;
+  left: -200px;
+}
 form {
   margin: 20px;
   padding: 20px;
@@ -50,9 +79,13 @@ a {
   vertical-align: middle;
 }
 .btn-light:hover {
-  background-color: #424b2f;
+  background-color: #cfe2d2;
 }
-
+.feelTemp {
+  position: relative;
+  top: -58px;
+  right: -60px;
+}
 .buttonLocation {
   background: #afdbde;
   border: 1px solid transparent;
@@ -67,7 +100,7 @@ a {
   vertical-align: middle;
 }
 .buttonLocation:hover {
-  background-color: #424b2f;
+  background-color: #cfe2d2;
 }
 .card-img-top {
   width: 48px;
@@ -107,16 +140,9 @@ body {
   padding: 0px;
   text-align: right;
   font-size: 12px;
-}
-
-.rowcontainer {
-  background-color: transparent;
-  border-radius: 20px;
-  text-align: center;
-  margin: 0px;
-  padding: 0px;
-  text-align: right;
-  font-size: 12px;
+  position: relative;
+  top: -180px;
+  bottom: 100px;
 }
 
 .topcontainer {
@@ -128,6 +154,7 @@ body {
   right: 0;
   top: 0;
 }
+
 .header {
   margin: 0 auto;
   padding: 0px;
@@ -146,4 +173,8 @@ body {
   font-size: 15px;
   text-decoration: none;
   top: -20px;
+  bottom: 0px;
+}
+.footer {
+  padding: 60px 0px 0px 0px;
 }

@@ -34,6 +34,9 @@
           <div class="top">
             <h1 id="city"></h1>
             <br />
+            <h2 class="date-time"></h2>
+            <br />
+            <p id="temperature-description"></p>
             <div id="weather">
               <div id="weatherToday">
                 <span id="temperature"></span>
@@ -41,27 +44,22 @@
                   <a href="#" id="celsius">°C</a> |
                   <a href="#" id="fahrenheit">°F</a>
                   <br />
-                  <span
-                    >Feels like <span id="feelsLike"></span>
-                    <span>°</span></span
+                  <span class="feelTemp">
+                    Feels like <span id="feelsLike"></span> <span>°</span></span
                   >
                 </span>
               </div>
-              <img
-                src="Images/1530392_weather_sun_sunny_temperature_icon.png"
-                alt="sunshine"
-              />
-              <br />
-              <p id="temperature-description"></p>
-            </div>
 
-            <h2 class="date-time"></h2>
+              <img src="" alt="" id="icon" />
+
+              <br />
+            </div>
           </div>
           <br />
           <div class="rowcontainer">
             <div class="row">
               <div class="col">
-                Wind:<span id="valueWind"> </span> <span>km/h</span>
+                Wind Speed: <span id="valueWind"> </span> <span>km/h</span>
               </div>
 
               <div class="col">
@@ -83,7 +81,9 @@
                 <span id="valueWindGust"> </span> <span>km/h</span>
               </div>
 
-              <div class="col">Pressure: <span id="valuePressure"> </span></div>
+              <div class="col">
+                Pressure: <span id="valuePressure"> </span><span> kPa</span>
+              </div>
 
               <div class="col">
                 Ceiling: <span id="valueCeiling"> </span><span>m</span>
@@ -104,7 +104,7 @@
           <div class="col">
             <div class="card" style="width: 11rem">
               <img
-                src="Images/1530365_weather_cloud_drizzel_rain_icon.png"
+                src="Images/mist-day.png"
                 class="card-img-top"
                 alt="rain drizzle"
               />
@@ -121,7 +121,7 @@
           <div class="col">
             <div class="card" style="width: 11rem">
               <img
-                src="Images/1530369_weather_cloud_clouds_cloudy_icon.png"
+                src="Images/scattered-clouds-day.png"
                 class="card-img-top"
                 alt="clouds"
               />
@@ -138,7 +138,7 @@
           <div class="col">
             <div class="card" style="width: 11rem">
               <img
-                src="Images/1530390_weather_clouds_cloudy_rain_sunny_icon.png"
+                src="Images/clear-sky-day.png"
                 class="card-img-top"
                 alt="overcast"
               />
@@ -155,7 +155,7 @@
           <div class="col">
             <div class="card" style="width: 11rem">
               <img
-                src="Images/1530391_weather_clouds_sun_sunny_icon.png"
+                src="Images/scattered-clouds-day.png"
                 class="card-img-top"
                 alt="sun"
               />
@@ -168,11 +168,10 @@
               </div>
             </div>
           </div>
-
           <div class="col">
             <div class="card" style="width: 11rem">
               <img
-                src="Images/1530392_weather_sun_sunny_temperature_icon.png"
+                src="Images/few-clouds-day.png"
                 class="card-img-top"
                 alt="sunshine"
               />
