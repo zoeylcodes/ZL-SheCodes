@@ -52,6 +52,10 @@ h2 {
   text-transform: capitalize;
 }
 
+#temperature {
+  font-size: 60px;
+}
+
 #icon {
   position: relative;
   padding: 0px;
@@ -161,14 +165,12 @@ body {
   margin-bottom: 10px;
 }
 
-.topcontainer {
+.rowcontainer {
   background: rgba(223, 236, 223, 0.5);
   border-radius: 20px;
   margin: 0px;
   padding: 0px;
   position: relative;
-  right: 0;
-  top: 0;
 }
 
 .header {
