@@ -113,7 +113,6 @@ function showTemperature(response) {
   );
 
   document.querySelector("#valueSunrise").innerHTML = response.data.sys.sunrise;
-
   document.querySelector("#valueSunset").innerHTML = response.data.sys.sunset;
 
   iconElement.setAttribute(
