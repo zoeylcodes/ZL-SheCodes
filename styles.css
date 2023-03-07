@@ -61,7 +61,7 @@ h2 {
   font-size: 15px;
   text-decoration: none;
   top: -200px;
-  left: -200px;
+  left: -220px;
   height: auto;
   max-width: 100%;
 }
@@ -126,6 +126,13 @@ a {
   margin: 0px;
   width: calc(100% / 3 - 10px);
 }
+
+.colDetails {
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+  width: calc(100% / 3 - 10px);
+}
 .card {
   font-weight: 100;
   font-weight: bold;
@@ -145,28 +152,31 @@ body {
 }
 
 .rowcontainer {
-  background-color: transparent;
   border-radius: 20px;
   text-align: center;
   margin: 0px;
   padding: 0px;
-  text-align: right;
+  text-align: just;
   font-size: 12px;
   position: relative;
-  top: -140px;
-  bottom: 100px;
+  top: -300px;
+  right: -850px;
   display: flex;
   flex-direction: column;
 }
-ul {
-  list-style: none;
+.values {
+  color: grey;
+  font-size: bold;
 }
-
 .row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.rowDetails {
+  text-align: left;
 }
 
 .header {
