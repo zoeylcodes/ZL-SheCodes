@@ -48,10 +48,9 @@ function searchWeather(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemp);
 }
-
 function showTemp(response) {
   let temperature = Math.round(response.data.main.temp);
-  console.log(response.data);
+
   let temperatureElement = document.querySelector("#temperature");
   let description = document.querySelector("#temperature-description");
   let iconElement = document.querySelector("#icon");
@@ -68,9 +67,13 @@ function showTemp(response) {
     response.data.wind.speed
   );
 
-  document.querySelector("#valueSunrise").innerHTML = response.data.sys.sunrise;
+  let sunriseTimeUTC = new Date(response.data.sys.sunrise * 1000);
+  let sunriseTimeLocal = sunriseTimeUTC.toLocaleTimeString();
+  document.querySelector("#valueSunrise").innerHTML = sunriseTimeLocal;
 
-  document.querySelector("#valueSunset").innerHTML = response.data.sys.sunset;
+  let sunsetTimeUTC = new Date(response.data.sys.sunset * 1000);
+  let sunsetTimeLocal = sunsetTimeUTC.toLocaleTimeString();
+  document.querySelector("#valueSunset").innerHTML = sunsetTimeLocal;
 
   iconElement.setAttribute(
     "src",
