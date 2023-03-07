@@ -8,6 +8,7 @@ h1 {
   text-align: center;
   font-size: 50px;
   color: white;
+  margin: 0 auto;
 }
 
 h2 {
@@ -145,10 +146,13 @@ a {
   text-align: center;
 }
 
-body {
+.container {
   background-image: url(Images/wallpaperflare.com_wallpaperday.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+
+  margin: 0 auto;
+  width: 80%;
 }
 
 .rowcontainer {
@@ -165,7 +169,7 @@ body {
   flex-direction: column;
 }
 .values {
-  color: grey;
+  color: black;
   font-size: bold;
 }
 .row {
@@ -210,4 +214,8 @@ body {
 .active {
   cursor: default;
   color: black;
+}
+
+.container {
+  margin: 0 auto;
 }
