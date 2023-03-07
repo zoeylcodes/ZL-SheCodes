@@ -67,15 +67,11 @@ function showTemp(response) {
   document.querySelector("#valueWind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  document.querySelector("#valueVisibility").innerHTML =
-    response.data.visibility;
+
   document.querySelector("#valueSunrise").innerHTML = response.data.sys.sunrise;
-  document.querySelector("#valuePressure").innerHTML =
-    response.data.main.pressure;
+
   document.querySelector("#valueSunset").innerHTML = response.data.sys.sunset;
-  document.querySelector("#valueWindGust").innerHTML = Math.round(
-    response.data.wind.gust
-  );
+
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -115,15 +111,11 @@ function showTemperature(response) {
   document.querySelector("#valueWind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  document.querySelector("#valueVisibility").innerHTML =
-    response.data.visibility;
+
   document.querySelector("#valueSunrise").innerHTML = response.data.sys.sunrise;
-  document.querySelector("#valuePressure").innerHTML =
-    response.data.main.pressure;
+
   document.querySelector("#valueSunset").innerHTML = response.data.sys.sunset;
-  document.querySelector("#valueWindGust").innerHTML = Math.round(
-    response.data.wind.gust
-  );
+
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
