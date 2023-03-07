@@ -115,8 +115,13 @@ function showTemperature(response) {
     response.data.wind.speed
   );
 
-  document.querySelector("#valueSunrise").innerHTML = response.data.sys.sunrise;
-  document.querySelector("#valueSunset").innerHTML = response.data.sys.sunset;
+  let sunriseTimeUTC = new Date(response.data.sys.sunrise * 1000);
+  let sunriseTimeLocal = sunriseTimeUTC.toLocaleTimeString();
+  document.querySelector("#valueSunrise").innerHTML = sunriseTimeLocal;
+
+  let sunsetTimeUTC = new Date(response.data.sys.sunset * 1000);
+  let sunsetTimeLocal = sunsetTimeUTC.toLocaleTimeString();
+  document.querySelector("#valueSunset").innerHTML = sunsetTimeLocal;
 
   iconElement.setAttribute(
     "src",
