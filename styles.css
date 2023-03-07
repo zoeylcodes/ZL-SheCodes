@@ -146,13 +146,10 @@ a {
   text-align: center;
 }
 
-.container {
+body {
   background-image: url(Images/wallpaperflare.com_wallpaperday.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-
-  margin: 0 auto;
-  width: 80%;
 }
 
 .rowcontainer {
