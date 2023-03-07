@@ -23,7 +23,8 @@ h2 {
 }
 
 #search-text-input {
-  width: 50%;
+  width: 40%;
+  margin: 0 auto;
 }
 #weather {
   position: relative;
@@ -132,9 +133,11 @@ a {
 }
 
 .colDetails {
-  text-align: left;
-  padding: 0px;
-  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 20px;
 }
 .card {
   font-weight: 100;
@@ -157,21 +160,17 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  text-align: center;
 }
 
 .rowcontainer {
-  border-radius: 20px;
-  text-align: center;
-  margin: 0px;
-  padding: 0px;
-  text-align: justify;
-  font-size: 12px;
-  position: relative;
-  top: -320px;
-  right: -700px;
   display: flex;
-  flex-direction: column;
-  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  top: -200px;
+  flex-direction: row-reverse;
+  position: relative;
+  margin: 0 auto;
 }
 .values {
   color: black;
@@ -182,10 +181,11 @@ body {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .rowDetails {
-  text-align: left;
+  flex: 1;
 }
 
 .header {
@@ -220,4 +220,9 @@ body {
 .active {
   cursor: default;
   color: black;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
 }
