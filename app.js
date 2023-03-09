@@ -25,6 +25,39 @@ let day = days[now.getDay()];
 
 dateTime.innerHTML = `${day} ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col">
+            <div class="card" style="width: 10rem">
+              <img
+                src="Images/mist-day.png"
+                class="card-img-top"
+                alt="rain drizzle"
+              />
+              <div class="card-body">
+                <h5 class="card-title">${day}</h5>
+                <p class="card-text">
+                  20°|13° <br />
+                  Rain
+                </p>
+              </div>
+            </div>
+          </div>
+        `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
 function findCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text-input");
@@ -162,3 +195,14 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+let time = new Date().getHours();
+let body = document.querySelector("body");
+
+if (time >= 6 && hour < 18) {
+  body.style.backgroundImage =
+    "url(Images/wallpaperflare.com_wallpaperday.jpg)";
+} else {
+  body.style.backgroundImage =
+    "url(Images/wp5181475-4k-colorful-landscape-wallpapers night)";
+}
