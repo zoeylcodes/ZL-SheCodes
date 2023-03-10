@@ -126,11 +126,17 @@ function showTemp(response) {
   );
 
   let sunriseTimeUTC = new Date(response.data.sys.sunrise * 1000);
-  let sunriseTimeLocal = sunriseTimeUTC.toLocaleTimeString();
+  let sunriseTimeLocal = sunriseTimeUTC.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
   document.querySelector("#valueSunrise").innerHTML = sunriseTimeLocal;
 
   let sunsetTimeUTC = new Date(response.data.sys.sunset * 1000);
-  let sunsetTimeLocal = sunsetTimeUTC.toLocaleTimeString();
+  let sunsetTimeLocal = sunsetTimeUTC.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
   document.querySelector("#valueSunset").innerHTML = sunsetTimeLocal;
 
   iconElement.setAttribute(

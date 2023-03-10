@@ -173,6 +173,24 @@ body {
   margin: 0 auto;
 }
 .values {
+  color: white;
+  font-size: bold;
+}
+
+#valueHumidity {
+  color: black;
+  font-size: bold;
+}
+#valueSunset {
+  color: black;
+  font-size: bold;
+}
+#valueSunrise {
+  color: black;
+  font-size: bold;
+}
+
+#valueWind {
   color: black;
   font-size: bold;
 }
@@ -182,10 +200,8 @@ body {
   justify-content: space-between;
   margin-bottom: 10px;
   text-align: center;
-}
 
-.rowDetails {
-  flex: 1;
+  margin: -10px;
 }
 
 .header {
