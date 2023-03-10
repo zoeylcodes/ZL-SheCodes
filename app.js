@@ -1,9 +1,11 @@
-let dateTime = document.querySelector("#dateTime");
-
 let now = new Date();
 let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+let timing = hours < 12 ? "AM" : "PM";
+if (hours > 12) {
+  hours -= 12;
+}
+if (hours === 0) {
+  hours = 12;
 }
 
 let minutes = now.getMinutes();
@@ -23,7 +25,7 @@ let days = [
 
 let day = days[now.getDay()];
 
-dateTime.innerHTML = `${day} ${hours}:${minutes}`;
+dateTime.innerHTML = `${day} ${hours}:${minutes} ${timing}`;
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -202,12 +204,17 @@ function showTemperature(response) {
   );
 
   let sunriseTimeUTC = new Date(response.data.sys.sunrise * 1000);
-  let sunriseTimeLocal = sunriseTimeUTC.toLocaleTimeString();
+  let sunriseTimeLocal = sunriseTimeUTC.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
   document.querySelector("#valueSunrise").innerHTML = sunriseTimeLocal;
 
   let sunsetTimeUTC = new Date(response.data.sys.sunset * 1000);
-  let sunsetTimeLocal = sunsetTimeUTC.toLocaleTimeString();
-  document.querySelector("#valueSunset").innerHTML = sunsetTimeLocal;
+  let sunsetTimeLocal = sunsetTimeUTC.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
   iconElement.setAttribute(
     "src",
