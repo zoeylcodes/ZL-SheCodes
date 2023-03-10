@@ -1,9 +1,17 @@
 let now = new Date();
 let hours = now.getHours();
-let timing = hours < 12 ? "AM" : "PM";
+let timing;
+
+if (hours < 12) {
+  timing = "AM";
+} else {
+  timing = "PM";
+}
+
 if (hours > 12) {
   hours -= 12;
 }
+
 if (hours === 0) {
   hours = 12;
 }
@@ -12,6 +20,8 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
+
+let timeString = `${hours}:${minutes} ${timing}`;
 
 let days = [
   "Sunday",
@@ -215,6 +225,7 @@ function showTemperature(response) {
     hour: "2-digit",
     minute: "2-digit",
   });
+  document.querySelector("#valueSunset").innerHTML = sunsetTimeLocal;
 
   iconElement.setAttribute(
     "src",
