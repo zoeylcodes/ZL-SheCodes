@@ -25,39 +25,64 @@ let day = days[now.getDay()];
 
 dateTime.innerHTML = `${day} ${hours}:${minutes}`;
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun"];
+
   let forecastHTML = `<div class="row">`;
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-          <div class="col">
-            <div class="card" style="width: 10rem">
-              <img
-                src="Images/mist-day.png"
-                class="card-img-top"
-                alt="rain drizzle"
-              />
-              <div class="card-body">
-                <h5 class="card-title">${day}</h5>
-                <p class="card-text">
-                  20°|13° <br />
-                  Rain
-                </p>
-              </div>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+        <div class="col">
+          <div class="card" style="width: 10rem">
+          <div class="descript">${forecastDay.weather[0].main}</div>
+            <img
+              src="https://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png";
+              class="card-img-top"
+              alt="weather icon"
+            />
+            <div class="card-body">
+              <h5 class="card-title">${formatDay(forecastDay.dt)}</h5>
+              <p class="card-text">
+                <span class="forecast-temp-max">${Math.round(
+                  forecastDay.temp.max
+                )}°|</span> 
+                <span class="forecast-temp-min">${Math.round(
+                  forecastDay.temp.min
+                )}°</span>
+              
+              </p>
             </div>
           </div>
-        `;
+        </div>
+      `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
-displayForecast();
+function getForecast(coordinates) {
+  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function findCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text-input");
@@ -68,7 +93,7 @@ function findCity(event) {
 }
 
 function getCity(city) {
-  let apiKey = "e22ed9083fe0fa0dbcc4f7e384978903";
+  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemp);
@@ -76,7 +101,7 @@ function getCity(city) {
 }
 
 function searchWeather(city) {
-  let apiKey = "e22ed9083fe0fa0dbcc4f7e384978903";
+  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemp);
@@ -113,6 +138,7 @@ function showTemp(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 
 let form = document.querySelector("#city-search");
@@ -122,7 +148,7 @@ getCity("Toronto");
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let apiKey = "e22ed9083fe0fa0dbcc4f7e384978903";
+  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
@@ -195,14 +221,3 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
-
-let time = new Date().getHours();
-let body = document.querySelector("body");
-
-if (time >= 6 && hour < 18) {
-  body.style.backgroundImage =
-    "url(Images/wallpaperflare.com_wallpaperday.jpg)";
-} else {
-  body.style.backgroundImage =
-    "url(Images/wp5181475-4k-colorful-landscape-wallpapers night)";
-}
