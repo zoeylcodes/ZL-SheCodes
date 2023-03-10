@@ -148,10 +148,31 @@ getCity("Toronto");
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
+  let coordinates = { lat: latitude, lon: longitude };
+  getForecast(coordinates);
   let apiKey = "a867e25f2d83db579421a57fd8e937ec";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
+}
+
+function getForecast(coordinates) {
+  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function showPositionbtn(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let coordinates = { lat: latitude, lon: longitude };
+  getForecastbtn(coordinates);
+}
+
+function getForecastbtn(coordinates) {
+  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showTemperature(response) {
