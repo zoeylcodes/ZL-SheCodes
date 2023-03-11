@@ -271,10 +271,11 @@ let buttonTheme = document.querySelector(".buttonTheme");
 
 let backgroundImages = [
   "url(Images/white-cloud-blue-sky.jpg)",
-  "url(Images/wallpaperflare.com_wallpaperday.jpg)",
+
   "url(Images/desktop-1920x1080.jpg)",
   "url(Images/ws_Green_Gradient_Background_1366x768.jpg)",
   "url(Images/simple-fan-art-kirby-ug1nabhcbvpkz5z7.webp)",
+  "url(Images/wallpaperflare.com_wallpaperday.jpg)",
 ];
 let currentBackground = -1;
 
