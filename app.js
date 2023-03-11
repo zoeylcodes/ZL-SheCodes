@@ -266,3 +266,32 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+let buttonTheme = document.querySelector(".buttonTheme");
+
+let backgroundImages = [
+  "url(Images/white-cloud-blue-sky.jpg)",
+  "url(Images/wallpaperflare.com_wallpaperday.jpg)",
+  "url(Images/desktop-1920x1080.jpg)",
+  "url(Images/ws_Green_Gradient_Background_1366x768.jpg)",
+  "url(Images/simple-fan-art-kirby-ug1nabhcbvpkz5z7.webp)",
+];
+let currentBackground = -1;
+
+buttonTheme.addEventListener("click", function () {
+  currentBackground = (currentBackground + 1) % backgroundImages.length;
+  document.body.style.backgroundImage = backgroundImages[currentBackground];
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundSize = "cover";
+  document.body.style.display = "flex";
+  document.body.style.flexDirection = "column";
+  document.body.style.justifyContent = "center";
+  document.body.style.alignItems = "center";
+  document.body.style.margin = "0 auto";
+  document.body.style.textAlign = "center";
+});
+
+backgroundImages.forEach(function (img) {
+  let image = new Image();
+  image.src = img;
+});
