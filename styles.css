@@ -328,4 +328,9 @@ body {
   .card {
     margin-bottom: 10px;
   }
+
+  #icon {
+    display: block;
+    margin: 0 auto;
+  }
 }
