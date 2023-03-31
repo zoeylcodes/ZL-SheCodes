@@ -267,9 +267,11 @@ body {
     margin-bottom: 10px;
   }
 
-  .top h1,
-  .top h2 {
+  .top h1 {
     font-size: 28px;
+  }
+  .top h2 {
+    font-size: 18px;
   }
 
   .degrees {
@@ -321,5 +323,9 @@ body {
     justify-content: center;
     text-align: center;
     margin-top: 10px;
+  }
+
+  .card {
+    margin-bottom: 10px;
   }
 }
