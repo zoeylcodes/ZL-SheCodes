@@ -257,3 +257,69 @@ body {
   max-width: 100%;
   margin: 0 auto;
 }
+
+@media (max-width: 576px) {
+  #city-search input[type="text"],
+  #city-search input[type="submit"],
+  #city-search button.buttonLocation {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .top h1,
+  .top h2 {
+    font-size: 28px;
+  }
+
+  .degrees {
+    display: flex;
+    justify-content: center;
+  }
+
+  .topcontainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rowcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .colDetails {
+    margin-bottom: 0;
+  }
+
+  .theme {
+    text-align: center;
+  }
+
+  #temperature {
+    font-size: 3rem;
+  }
+
+  .degrees {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  #weatherToday {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feelTemp {
+    position: flex;
+    left: -0.1px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
