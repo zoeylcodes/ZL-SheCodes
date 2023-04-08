@@ -302,7 +302,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(223, 236, 223, 0.2);
   }
 
   .colDetails {
