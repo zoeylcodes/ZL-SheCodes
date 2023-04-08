@@ -80,9 +80,9 @@ a {
   text-decoration: none;
 }
 .btn-light {
-  background: #afdbde;
+  background: rgba(223, 236, 223, 0.5);
   color: black;
-  border: 1px solid transparent;
+  border: 0.5px solid rgba(0, 0, 0, 0.175);
   padding: 3px 10px;
   font-size: 1rem;
   line-height: 1.5;
@@ -94,7 +94,7 @@ a {
   vertical-align: middle;
 }
 .btn-light:hover {
-  background-color: #cfe2d2;
+  background-color: #e0e8ea;
 }
 .feelTemp {
   position: relative;
@@ -103,9 +103,9 @@ a {
   font-size: 15px;
 }
 .buttonLocation {
-  background: #afdbde;
+  background: rgba(223, 236, 223, 0.5);
   color: black;
-  border: 1px solid transparent;
+  border: 0.5px solid rgba(0, 0, 0, 0.175);
   padding: 3px 10px;
   font-size: 1rem;
   line-height: 1.5;
@@ -117,9 +117,9 @@ a {
   vertical-align: middle;
 }
 .buttonTheme {
-  background: #afdbde;
+  background: rgba(223, 236, 223, 0.5);
   color: black;
-  border: 1px solid transparent;
+  border: 0.5px solid rgba(0, 0, 0, 0.175);
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -131,7 +131,11 @@ a {
   vertical-align: middle;
 }
 .buttonLocation:hover {
-  background-color: #cfe2d2;
+  background-color: #e0e8ea;
+}
+
+.buttonTheme:hover {
+  background-color: #e0e8ea;
 }
 .card-img-top {
   width: 48px;
@@ -167,7 +171,7 @@ a {
 }
 
 body {
-  background-image: url(Images/wallpaperflare.com_wallpaperday.jpg);
+  background-image: url(Images/clouds.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -186,7 +190,7 @@ body {
   flex-direction: row-reverse;
   position: relative;
   margin: 0 auto;
-  background: rgba(223, 236, 223, 0.5);
+
   border-radius: 10px;
   padding: 10px;
 }
@@ -222,13 +226,10 @@ body {
   margin: -10px;
 }
 
-.header {
-  margin: 0 auto;
-  padding: 0px;
-}
 .footer {
   color: grey;
   text-align: center;
+  font-weight: 600;
   margin: 0 auto;
   padding-bottom: 20px;
 }
@@ -245,9 +246,9 @@ body {
 
 .days {
   position: relative;
-  top: -80px;
+  top: -120px;
   max-width: 100%;
-  bottom: 0px;
+  bottom: 60px;
 }
 .footer {
   padding: 60px 20px 60px 20px;
@@ -292,6 +293,9 @@ body {
   .topcontainer {
     display: flex;
     flex-direction: column;
+    bottom: 0px;
+    margin: 0 auto;
+    padding: 0px;
   }
 
   .rowcontainer {
