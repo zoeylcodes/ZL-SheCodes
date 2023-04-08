@@ -171,8 +171,8 @@ a {
 }
 
 body {
-  margin: 0 auto;
   background-image: url(Images/clouds.jpg);
+  margin: 0 auto;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -259,8 +259,6 @@ body {
 }
 
 .container {
-  max-width: 80%;
-  max-height: 80%;
   text-align: center;
 }
 
