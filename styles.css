@@ -171,6 +171,7 @@ a {
 }
 
 body {
+  margin: 0 auto;
   background-image: url(Images/clouds.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -178,7 +179,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+
   text-align: center;
 }
 
@@ -348,5 +349,8 @@ body {
     position: relative;
     top: -200px;
     left: -120px;
+  }
+  .btn-light {
+    font-weight: normal;
   }
 }
